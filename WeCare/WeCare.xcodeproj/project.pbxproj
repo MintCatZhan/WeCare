@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF0B8AE71F6A46D30033F27A /* HoursTracking+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0B8AE61F6A46D30033F27A /* HoursTracking+CoreDataProperties.swift */; };
+		CF0B8AE91F6A4AAB0033F27A /* AddRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0B8AE81F6A4AAB0033F27A /* AddRecordViewController.swift */; };
+		CF0B8AEB1F6A98610033F27A /* ConfigureVisualisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0B8AEA1F6A98610033F27A /* ConfigureVisualisationViewController.swift */; };
 		CF100B5F1F53F4F60060166B /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF100B5E1F53F4F60060166B /* TrackerViewController.swift */; };
 		CF100B631F53F5390060166B /* TrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF100B621F53F5390060166B /* TrackerCell.swift */; };
 		CF100B6A1F55A9850060166B /* HoursTracking+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF100B681F55A9850060166B /* HoursTracking+CoreDataClass.swift */; };
-		CF100B6B1F55A9850060166B /* HoursTracking+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF100B691F55A9850060166B /* HoursTracking+CoreDataProperties.swift */; };
 		CF118A961F3B29DC00A897BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF118A951F3B29DC00A897BF /* AppDelegate.swift */; };
 		CF118A9B1F3B29DC00A897BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF118A991F3B29DC00A897BF /* Main.storyboard */; };
 		CF118A9E1F3B29DC00A897BF /* WeCare.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CF118A9C1F3B29DC00A897BF /* WeCare.xcdatamodeld */; };
@@ -21,12 +23,14 @@
 		CF11C41B1F58492800973F6A /* VisualisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11C41A1F58492800973F6A /* VisualisationViewController.swift */; };
 		CF11C4261F58516300973F6A /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF11C4251F58516300973F6A /* Charts.framework */; };
 		CF11C42A1F58627700973F6A /* ChartStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF11C4291F58627700973F6A /* ChartStringFormatter.swift */; };
-		CF156D701F4452C700B05587 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF156D6F1F4452C700B05587 /* CategoryCell.swift */; };
-		CF156D721F44530D00B05587 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF156D711F44530D00B05587 /* CategoryTableViewController.swift */; };
 		CF156D791F4457B600B05587 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF156D781F4457B600B05587 /* CoreData.framework */; };
+		CF1E97971F6E6D9C00B8BF59 /* NotificationForApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1E97961F6E6D9C00B8BF59 /* NotificationForApp.swift */; };
+		CF23A15F1F6EBD0E0074244E /* HolidaysData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23A15E1F6EBD0E0074244E /* HolidaysData.swift */; };
+		CF23A1621F6EBE0B0074244E /* Holidays+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23A1601F6EBE0B0074244E /* Holidays+CoreDataClass.swift */; };
+		CF23A1631F6EBE0B0074244E /* Holidays+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF23A1611F6EBE0B0074244E /* Holidays+CoreDataProperties.swift */; };
 		CF2E28611F49319500835B1C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E28601F49319500835B1C /* Category.swift */; };
+		CF4B35E71F6E2B3000876E7A /* StoryTellingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4B35E61F6E2B3000876E7A /* StoryTellingViewController.swift */; };
 		CF561CBA1F5A5480005878A5 /* DateTimeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF561CB91F5A5480005878A5 /* DateTimeHandler.swift */; };
-		CF659FE91F45BB820072F141 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF659FE81F45BB820072F141 /* CloudKit.framework */; };
 		F99062BF98809398BA89C29C /* Pods_WeCare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2C5D8331E566B51594C59F /* Pods_WeCare.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,10 +55,12 @@
 		4CBCC0E78CA31D45348CC4C4 /* Pods-WeCare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeCare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeCare/Pods-WeCare.debug.xcconfig"; sourceTree = "<group>"; };
 		60EA49352486139766A7AA97 /* Pods-WeCare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeCare.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeCare/Pods-WeCare.release.xcconfig"; sourceTree = "<group>"; };
 		7D2C5D8331E566B51594C59F /* Pods_WeCare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeCare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0B8AE61F6A46D30033F27A /* HoursTracking+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HoursTracking+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CF0B8AE81F6A4AAB0033F27A /* AddRecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRecordViewController.swift; sourceTree = "<group>"; };
+		CF0B8AEA1F6A98610033F27A /* ConfigureVisualisationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureVisualisationViewController.swift; sourceTree = "<group>"; };
 		CF100B5E1F53F4F60060166B /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		CF100B621F53F5390060166B /* TrackerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerCell.swift; sourceTree = "<group>"; };
 		CF100B681F55A9850060166B /* HoursTracking+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HoursTracking+CoreDataClass.swift"; sourceTree = "<group>"; };
-		CF100B691F55A9850060166B /* HoursTracking+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HoursTracking+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF118A921F3B29DC00A897BF /* WeCare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeCare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF118A951F3B29DC00A897BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF118A9A1F3B29DC00A897BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,13 +77,15 @@
 		CF11C41A1F58492800973F6A /* VisualisationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualisationViewController.swift; sourceTree = "<group>"; };
 		CF11C4251F58516300973F6A /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../Library/Developer/Xcode/DerivedData/WeCare-bcuycybtcvzzzxahmfyriljrhkag/Build/Products/Debug-iphonesimulator/Charts/Charts.framework"; sourceTree = "<group>"; };
 		CF11C4291F58627700973F6A /* ChartStringFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartStringFormatter.swift; sourceTree = "<group>"; };
-		CF156D6F1F4452C700B05587 /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		CF156D711F44530D00B05587 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		CF156D781F4457B600B05587 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CF1E97961F6E6D9C00B8BF59 /* NotificationForApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationForApp.swift; sourceTree = "<group>"; };
+		CF23A15E1F6EBD0E0074244E /* HolidaysData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolidaysData.swift; sourceTree = "<group>"; };
+		CF23A1601F6EBE0B0074244E /* Holidays+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Holidays+CoreDataClass.swift"; sourceTree = "<group>"; };
+		CF23A1611F6EBE0B0074244E /* Holidays+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Holidays+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		CF2E28601F49319500835B1C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		CF4B35E61F6E2B3000876E7A /* StoryTellingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryTellingViewController.swift; sourceTree = "<group>"; };
 		CF561CB91F5A5480005878A5 /* DateTimeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeHandler.swift; sourceTree = "<group>"; };
 		CF659FE71F45BB7D0072F141 /* WeCare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WeCare.entitlements; sourceTree = "<group>"; };
-		CF659FE81F45BB820072F141 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +95,6 @@
 			files = (
 				CF11C4261F58516300973F6A /* Charts.framework in Frameworks */,
 				CF156D791F4457B600B05587 /* CoreData.framework in Frameworks */,
-				CF659FE91F45BB820072F141 /* CloudKit.framework in Frameworks */,
 				F99062BF98809398BA89C29C /* Pods_WeCare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,8 +128,10 @@
 		CF118A891F3B29DC00A897BF = {
 			isa = PBXGroup;
 			children = (
+				CF23A1601F6EBE0B0074244E /* Holidays+CoreDataClass.swift */,
+				CF23A1611F6EBE0B0074244E /* Holidays+CoreDataProperties.swift */,
 				CF100B681F55A9850060166B /* HoursTracking+CoreDataClass.swift */,
-				CF100B691F55A9850060166B /* HoursTracking+CoreDataProperties.swift */,
+				CF0B8AE61F6A46D30033F27A /* HoursTracking+CoreDataProperties.swift */,
 				CF118A941F3B29DC00A897BF /* WeCare */,
 				CF118AAC1F3B29DD00A897BF /* WeCareTests */,
 				CF118AB71F3B29DD00A897BF /* WeCareUITests */,
@@ -180,10 +189,11 @@
 			isa = PBXGroup;
 			children = (
 				CF11C4291F58627700973F6A /* ChartStringFormatter.swift */,
-				CF156D6F1F4452C700B05587 /* CategoryCell.swift */,
 				CF2E28601F49319500835B1C /* Category.swift */,
 				CF100B621F53F5390060166B /* TrackerCell.swift */,
 				CF561CB91F5A5480005878A5 /* DateTimeHandler.swift */,
+				CF1E97961F6E6D9C00B8BF59 /* NotificationForApp.swift */,
+				CF23A15E1F6EBD0E0074244E /* HolidaysData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -191,9 +201,11 @@
 		CF156D6D1F44526700B05587 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CF156D711F44530D00B05587 /* CategoryTableViewController.swift */,
 				CF100B5E1F53F4F60060166B /* TrackerViewController.swift */,
 				CF11C41A1F58492800973F6A /* VisualisationViewController.swift */,
+				CF0B8AE81F6A4AAB0033F27A /* AddRecordViewController.swift */,
+				CF0B8AEA1F6A98610033F27A /* ConfigureVisualisationViewController.swift */,
+				CF4B35E61F6E2B3000876E7A /* StoryTellingViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -202,7 +214,6 @@
 			isa = PBXGroup;
 			children = (
 				CF11C4251F58516300973F6A /* Charts.framework */,
-				CF659FE81F45BB820072F141 /* CloudKit.framework */,
 				CF156D781F4457B600B05587 /* CoreData.framework */,
 				7D2C5D8331E566B51594C59F /* Pods_WeCare.framework */,
 			);
@@ -290,7 +301,7 @@
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -412,18 +423,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF23A1631F6EBE0B0074244E /* Holidays+CoreDataProperties.swift in Sources */,
+				CF1E97971F6E6D9C00B8BF59 /* NotificationForApp.swift in Sources */,
 				CF118A9E1F3B29DC00A897BF /* WeCare.xcdatamodeld in Sources */,
 				CF100B6A1F55A9850060166B /* HoursTracking+CoreDataClass.swift in Sources */,
-				CF100B6B1F55A9850060166B /* HoursTracking+CoreDataProperties.swift in Sources */,
+				CF0B8AE71F6A46D30033F27A /* HoursTracking+CoreDataProperties.swift in Sources */,
+				CF0B8AE91F6A4AAB0033F27A /* AddRecordViewController.swift in Sources */,
 				CF100B631F53F5390060166B /* TrackerCell.swift in Sources */,
 				CF118A961F3B29DC00A897BF /* AppDelegate.swift in Sources */,
 				CF11C42A1F58627700973F6A /* ChartStringFormatter.swift in Sources */,
-				CF156D701F4452C700B05587 /* CategoryCell.swift in Sources */,
-				CF156D721F44530D00B05587 /* CategoryTableViewController.swift in Sources */,
+				CF23A1621F6EBE0B0074244E /* Holidays+CoreDataClass.swift in Sources */,
+				CF23A15F1F6EBD0E0074244E /* HolidaysData.swift in Sources */,
 				CF100B5F1F53F4F60060166B /* TrackerViewController.swift in Sources */,
 				CF11C41B1F58492800973F6A /* VisualisationViewController.swift in Sources */,
+				CF0B8AEB1F6A98610033F27A /* ConfigureVisualisationViewController.swift in Sources */,
 				CF2E28611F49319500835B1C /* Category.swift in Sources */,
 				CF561CBA1F5A5480005878A5 /* DateTimeHandler.swift in Sources */,
+				CF4B35E71F6E2B3000876E7A /* StoryTellingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

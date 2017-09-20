@@ -9,12 +9,13 @@
 import UIKit
 
 class TrackerCell: UITableViewCell {
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var fromLabel: UILabel!
-    @IBOutlet weak var toLabel: UILabel!
-    @IBOutlet weak var periodLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
+    @IBOutlet weak var fromDateLabel: UILabel!
+    @IBOutlet weak var toDateLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var fromTimeLabel: UILabel!
 
+    @IBOutlet weak var toTimeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

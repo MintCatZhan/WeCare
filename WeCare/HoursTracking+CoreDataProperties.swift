@@ -1,9 +1,9 @@
 //
 //  HoursTracking+CoreDataProperties.swift
-//  WeCare
+//  
 //
-//  Created by Nguyen Dinh Thang on 29/8/17.
-//  Copyright © 2017 Nguyen Dinh Thang. All rights reserved.
+//  Created by Nguyen Dinh Thang on 14/9/17.
+//
 //
 
 import Foundation
@@ -17,9 +17,7 @@ extension HoursTracking {
     }
 
     @NSManaged public var from: String?
-    @NSManaged public var to: String?
     @NSManaged public var id: Int32
-    @NSManaged public var fromDate: String?
-    @NSManaged public var toDate: String?
+    @NSManaged public var to: String?
 
 }

@@ -10,8 +10,8 @@ import UIKit
 
 class DateTimeHandler: NSObject {
     
-    var dateTimeFormatString: String = "yyyy-MM-dd HH:mm:ss"
-    var dateFormatString: String = "yyyy-MM-dd"
+    var dateTimeFormatString: String = "dd-MM-yyyy HH:mm:ss"
+    var dateFormatString: String = "dd-MM-yyyy"
     var timeFormatString: String = "HH:mm:ss"
     
     //MARK: - Date and Time Handling
@@ -46,6 +46,13 @@ class DateTimeHandler: NSObject {
     func convertDateTimeStringToDate(string: String) -> Date{
         let formatter = DateFormatter()
         formatter.dateFormat = dateTimeFormatString
+        let result = formatter.date(from: string)
+        return result!
+    }
+    
+    func convertDateStringToDate(string: String) -> Date{
+        let formatter = DateFormatter()
+        formatter.dateFormat = dateFormatString
         let result = formatter.date(from: string)
         return result!
     }

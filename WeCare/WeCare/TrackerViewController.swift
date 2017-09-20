@@ -9,8 +9,9 @@
 import UIKit
 import CoreData
 import Foundation
+import UserNotifications
 
-class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddRecord{
 
     //Mark: - UI Initialization
     @IBOutlet weak var startStopButton: UIButton!
@@ -53,8 +54,9 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound, .badge]) { (didAllow, error) in
+            
+        }
         
         recordTableView.backgroundColor = UIColor.lightText
         
@@ -89,6 +91,7 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
     
     //Mark: - Pause In Background : stop timer and save the current time
     func pauseWhenBackground(noti: Notification){
@@ -151,7 +154,25 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
     
    //Mark: - Start and Stop Timer button
     @IBAction func startStopTimer(_ sender: UIButton) {
+        //Set notification if timer is over 8 hours
+        let content = UNMutableNotificationContent()
+        content.title = "Over 8 Hours Working"
+        content.subtitle = ""
+        content.body = "You are working over 8 hours!!!"
+        content.badge = 1
+        content.sound = UNNotificationSound.default()
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 28800, repeats: false)
+        let request = UNNotificationRequest(identifier: "Over8Hours", content: content, trigger: trigger)
+        
         if startStopTimer == true{
+            
+            
+            
+            UNUserNotificationCenter.current().add(request, withCompletionHandler: { (error) in
+                //code
+            })
+            
             //Get the date time when click start button
             let date = Date()
             fromDate = dateTimeHandler.convertDateToDateTimeString(date: date)
@@ -169,6 +190,7 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
             startStopButton.setImage(UIImage(named: stopImageString), for: UIControlState.normal)
         }
         else{
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["Over8Hours"])
             
             let alert: UIAlertController = UIAlertController(title: "Stop Tracking", message: "Do you want to stop tracking?", preferredStyle: UIAlertControllerStyle.alert)
             let btnCancel: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel) { (btn) in
@@ -179,7 +201,7 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
                 let date = Date()
                 self.toDate = self.dateTimeHandler.convertDateToDateTimeString(date: date)
                 
-                self.saveRecord(from: self.fromDate, to: self.toDate, fromDate: self.fromDate, toDate: self.toDate)
+                self.saveRecord(from: self.fromDate, to: self.toDate)
                 
                 //Stop timer
                 self.timer.invalidate()
@@ -235,13 +257,9 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     //Mark: - Fetch Data from CoreData
-    func saveRecord(from: String, to: String, fromDate: String, toDate: String){
+    func saveRecord(from: String, to: String){
         //Check current max ID in data
         let id = checkID()
-        
-        //Convert from date and to date to string
-        let tempFromDate = dateTimeHandler.convertDateTimeStringToDateString(string: fromDate)
-        let tempToDate = dateTimeHandler.convertDateTimeStringToDateString(string: toDate)
         
         //Connect to coredata and initialize new record
         let data = NSEntityDescription.insertNewObject(forEntityName: getFetchEntityName, into: managedObjectContext) as? HoursTracking
@@ -250,8 +268,6 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         data?.from = from
         data?.to = to
         data?.id = Int32(id)
-        data?.fromDate = tempFromDate
-        data?.toDate = tempToDate
         
         //Save record to core data
         do{
@@ -322,10 +338,11 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         let record = self.tracking[indexPath.row]
         
         //Fetch data to display in table view
-        cell.dateLabel.text = dateTimeHandler.convertDateTimeStringToDateString(string: record.from!)
+        cell.fromDateLabel.text = dateTimeHandler.convertDateTimeStringToDateString(string: record.from!)
+        cell.toDateLabel.text = dateTimeHandler.convertDateTimeStringToDateString(string: record.to!)
         cell.idLabel.text = String(Int(record.id))
-        cell.fromLabel.text = "From: \(dateTimeHandler.convertDateTimeStringToTimeString(string: record.from!))"
-        cell.toLabel.text = "To: \(dateTimeHandler.convertDateTimeStringToTimeString(string: record.to!))"
+        cell.fromTimeLabel.text = "\(dateTimeHandler.convertDateTimeStringToTimeString(string: record.from!))"
+        cell.toTimeLabel.text = "\(dateTimeHandler.convertDateTimeStringToTimeString(string: record.to!))"
         
         //Convert date time string to date and time type
         let from = dateTimeHandler.convertDateTimeStringToDate(string: record.from!)
@@ -339,7 +356,7 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
         p_sec = temp % 60
         
         //Display duration in table view
-        cell.periodLabel.text = "Duration: \(p_hour)h:\(p_min)m:\(p_sec)s"
+        cell.durationLabel.text = "\(p_hour)h:\(p_min)m:\(p_sec)s"
         
         return cell
     }
@@ -377,6 +394,18 @@ class TrackerViewController: UIViewController, UITableViewDelegate, UITableViewD
             alert.addAction(btnDelete)
             present(alert, animated: true, completion: nil)
             
+        }
+    }
+    
+    func addRecord(from: String, to: String) {
+        self.saveRecord(from: from, to: to)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addRecordSegue = "addRecordSegue"
+        if segue.identifier == addRecordSegue {
+            let addRecordViewController = segue.destination as! AddRecordViewController
+            addRecordViewController.delegate = self
         }
     }
 
